@@ -1,0 +1,228 @@
+/* ===========================
+   ROOT & GLOBAL RESET
+=========================== */
+:root {
+  --rgm-blue: #1a4f8b;
+  --rgm-blue-dark: #123a66;
+  --rgm-bg: #f4f7fb;
+  --border-light: #dce3ec;
+  --text-dark: #1e2a36;
+  --text-muted: #6b7c8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--rgm-bg);
+  color: var(--text-dark);
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+.haul-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 48px 120px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 25px 60px rgba(26, 79, 139, 0.12);
+  position: relative;
+}
+
+/* Headings */
+.haul-container h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--rgm-blue);
+}
+
+.haul-container p {
+  max-width: 780px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   BOT AREA
+=========================== */
+.bot-wrapper {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 280px;
+  max-width: calc(100vw - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bot-animation {
+  width: 140px;
+  height: 140px;
+}
+
+/* ===========================
+   BOT BUBBLE
+=========================== */
+.bot-bubble {
+  width: 100%;
+  background: var(--rgm-blue);
+  color: #ffffff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  box-shadow: 0 12px 30px rgba(26, 79, 139, 0.3);
+  animation: bubbleFade 0.3s ease;
+}
+
+@keyframes bubbleFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   FORM LAYOUT
+=========================== */
+.haul-form {
+  margin-top: 40px;
+  max-width: 720px;
+}
+
+/* Inputs */
+.haul-form input,
+.haul-form select,
+.haul-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  font-size: 15px;
+  transition: all 0.25s ease;
+  background: #fff;
+}
+
+.haul-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Focus state */
+.haul-form input:focus,
+.haul-form select:focus,
+.haul-form textarea:focus {
+  outline: none;
+  border-color: var(--rgm-blue);
+  box-shadow: 0 0 0 3px rgba(26, 79, 139, 0.15);
+}
+
+/* ===========================
+   CHECKBOX STYLING
+=========================== */
+.haul-form label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.haul-form input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--rgm-blue);
+}
+
+/* ===========================
+   FORM MESSAGE
+=========================== */
+.form-message {
+  margin: 14px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--rgm-blue-dark);
+}
+
+/* ===========================
+   SUBMIT BUTTON
+=========================== */
+.haul-form button {
+  margin-top: 18px;
+  background: var(--rgm-blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 26px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(26, 79, 139, 0.25);
+}
+
+.haul-form button:hover {
+  background: var(--rgm-blue-dark);
+  transform: translateY(-1px);
+}
+
+.haul-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .bot-wrapper {
+    position: static;
+    margin: 30px auto 0;
+  }
+
+  .haul-container {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .haul-container {
+    padding: 28px 22px 60px;
+  }
+
+  .bot-wrapper {
+    width: 100%;
+  }
+
+  .bot-bubble {
+    font-size: 13px;
+  }
+}
+.bot-wrapper {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+}
